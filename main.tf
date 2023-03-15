@@ -65,15 +65,15 @@ resource "aws_security_group" "mainvpc_sg" {
   }
 }
 
-resource "aws_key_pair" "mainvpc_auth" {
-  key_name   = "mainvpckey"
-  public_key = file("~/.ssh/mainvpc.pub")
-}
+# resource "aws_key_pair" "mainvpc_auth" {
+#  key_name   = "mainvpckey"
+#  public_key = file("~/.ssh/mainvpc.pub")
+# }
 
 resource "aws_instance" "dev_node" {
   instance_type          = "t2.micro"
   ami                    = data.aws_ami.server_ami.id
-  key_name               = aws_key_pair.mainvpc_auth.id
+  # key_name               = aws_key_pair.mainvpc_auth.id
   vpc_security_group_ids = [aws_security_group.mainvpc_sg.id]
   subnet_id              = aws_subnet.mainvpc_public_subnet.id
 
