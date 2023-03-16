@@ -33,12 +33,4 @@ jobs:
         push: true
         tags: ghcr.io/swapnil-gohil/demo-repo:latest
 
-    - name: Add badge
-      run: |
-        echo "[![Version](https://img.shields.io/github/package-json/v/<username>/<repo>?style=flat-square)](https://github.com/<username>/<repo>/packages)" >> README.md
-        git add README.md
-        git config --global user.name "swapnil-gohil"
-        git config --global user.email "swapnilgohil13@gmail.com"
-        git commit -m "Add version badge"
-        git push
-
+    
