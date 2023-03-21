@@ -3,7 +3,7 @@ data "aws_ami" "server_ami" {
   owners      = ["137112412989"]
 
   filter {
-    name   = "name"
+    name   = "name11"
     values = ["amzn2-ami-kernel-5.10-hvm-*"]
   }
 }
